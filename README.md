@@ -2,8 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Reveal.js](https://img.shields.io/badge/reveal.js-6.x-orange.svg)](https://revealjs.com/)
-[![CI](https://github.com/isaac-cf-wong/presentation-template/actions/workflows/ci.yml/badge.svg)](https://github.com/isaac-cf-wong/presentation-template/actions/workflows/ci.yml)
-[![Publish](https://github.com/isaac-cf-wong/presentation-template/actions/workflows/publish.yml/badge.svg)](https://isaac-cf-wong.github.io/presentation-template/)
+[![CI](https://github.com/isaac-cf-wong/20260702-wavecore-phd-symposium-einstein-telescope/actions/workflows/ci.yml/badge.svg)](https://github.com/isaac-cf-wong/20260702-wavecore-phd-symposium-einstein-telescope/actions/workflows/ci.yml)
+[![Publish](https://github.com/isaac-cf-wong/20260702-wavecore-phd-symposium-einstein-telescope/actions/workflows/publish.yml/badge.svg)](https://isaac-cf-wong.github.io/20260702-wavecore-phd-symposium-einstein-telescope/)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 [![typos](https://img.shields.io/badge/spell--check-typos-brightgreen)](https://github.com/crate-ci/typos)
 
