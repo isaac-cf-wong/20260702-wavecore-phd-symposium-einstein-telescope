@@ -4,12 +4,15 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Presentation Template</title>
+        <title>
+            The Einstein Telescope: Extreme Precision Sensing and Signal
+            Processing
+        </title>
         <meta
             name="description"
-            content="A modern presentation built with reveal.js"
+            content="Keynote for the 3rd WaveCoRE PhD Symposium: Einstein Telescope overview, current developments, and open challenges in sensing, signal processing, waves, and data analysis."
         />
-        <meta name="author" content="Your Name" />
+        <meta name="author" content="Isaac C. F. Wong" />
 
         <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
         <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css" />
@@ -27,34 +30,38 @@
     </head>
 
     <body>
-        <!-- Optional footer shown on every slide. Edit or remove as needed. -->
         <div class="deck-footer">
-            Your Name | Presentation Title | Venue · Date
+            Wong | Einstein Telescope | 3rd WaveCoRE PhD Symposium · 2 July 2026
         </div>
 
         <div class="reveal">
             <div class="slides">
-                <!--
-          Each section loads a Markdown file via reveal.js's built-in data-markdown.
-          Use data-separator-vertical to split a single .md file into vertical slides.
-        -->
+                <!-- ===== 50 min keynote + 10 min Q&A ===== -->
                 <section data-markdown="slides/01-title.md"></section>
-
-                <section data-markdown="slides/02-about.md"></section>
-
-                <!-- Vertical group: overview → code → math, separated by --- in the .md file -->
                 <section
-                    data-markdown="slides/03-features.md"
+                    data-markdown="slides/02-opening.md"
                     data-separator-vertical="^---$"
                 ></section>
-
-                <!-- Vertical group: getting started → themes, separated by --- in the .md file -->
                 <section
-                    data-markdown="slides/04-getting-started.md"
+                    data-markdown="slides/03-et-overview.md"
                     data-separator-vertical="^---$"
                 ></section>
-
-                <section data-markdown="slides/05-conclusion.md"></section>
+                <section
+                    data-markdown="slides/04-sensing-waves.md"
+                    data-separator-vertical="^---$"
+                ></section>
+                <section
+                    data-markdown="slides/05-data-analysis.md"
+                    data-separator-vertical="^---$"
+                ></section>
+                <section
+                    data-markdown="slides/06-open-challenges.md"
+                    data-separator-vertical="^---$"
+                ></section>
+                <section
+                    data-markdown="slides/07-opportunities-closing.md"
+                    data-separator-vertical="^---$"
+                ></section>
             </div>
         </div>
 
@@ -66,6 +73,7 @@
         <script src="node_modules/reveal.js/dist/plugin/search.js"></script>
         <script src="node_modules/reveal.js/dist/plugin/zoom.js"></script>
         <script src="js/custom.js"></script>
+        <script src="js/visualizations.js"></script>
 
         <script>
             Reveal.initialize({

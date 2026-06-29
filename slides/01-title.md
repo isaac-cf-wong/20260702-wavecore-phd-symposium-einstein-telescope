@@ -1,11 +1,14 @@
-<p class="eyebrow">Venue · Session · Date</p>
+<p class="eyebrow">3rd WaveCoRE PhD Symposium · Keynote</p>
 
-# Presentation Template
+# The Einstein Telescope
 
-## A clean, light theme built with reveal.js
+## Listening to the Universe through extreme precision sensing and signal processing
 
-<p class="byline">Your Name</p>
-<p class="muted">Affiliation · Date</p>
+<p class="byline">Isaac C. F. Wong</p>
+<p class="muted">KU Leuven · 2 July 2026</p>
 
-Notes: Welcome to your presentation template. This is the title slide. You can
-add speaker notes here that won't be visible to the audience.
+Notes: 50 min + 10 min Q&A. Tone: broad keynote for a signal-processing,
+wireless, waves, sensing, and data-analysis audience. Main message: ET is not
+only an astronomy instrument; it is a frontier signal-processing system where
+the hard part is extracting weak coherent structure from a noisy, distributed,
+non-stationary measurement.

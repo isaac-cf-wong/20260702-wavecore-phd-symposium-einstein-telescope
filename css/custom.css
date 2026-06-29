@@ -204,7 +204,7 @@ body {
 .large-claim {
     max-width: 980px;
     color: var(--blue);
-    font-size: 1.05em !important;
+    font-size: 0.92em !important;
     font-weight: 700;
     line-height: 1.18 !important;
 }
@@ -280,6 +280,238 @@ body {
     border-top: 4px solid var(--cyan);
     background: #eef7fa;
     padding: 20px 22px;
+}
+
+/* ===== Visual explanation stages ===== */
+
+.viz-frame {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    margin: 0.3em 0 0.32em;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    background:
+        linear-gradient(180deg, rgb(255 255 255 / 88%), rgb(246 250 252 / 96%)),
+        radial-gradient(
+            circle at 18% 15%,
+            rgb(0 165 200 / 10%),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 86% 85%,
+            rgb(242 169 0 / 12%),
+            transparent 30%
+        );
+}
+
+.viz-frame.compact {
+    height: 310px;
+}
+
+.viz-frame.hero-viz {
+    height: 545px;
+    margin-top: 0.45em;
+}
+
+.video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 545px;
+    margin: 0.45em 0 0.35em;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    background: #0c1118;
+}
+
+.video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.gw150914-frame {
+    display: grid;
+    grid-template-columns: 0.88fr 1.12fr;
+    grid-template-rows: 1fr 1fr auto;
+    gap: 12px 16px;
+    width: 100%;
+    height: 505px;
+    margin-top: 0.38em;
+}
+
+.gw-panel {
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    background: white;
+}
+
+.gw-panel h3 {
+    margin: 0;
+    border-bottom: 1px solid var(--rule);
+    background: #eef7fa;
+    padding: 7px 12px;
+    color: var(--ink);
+    font-size: 0.42em;
+}
+
+.gw-panel img {
+    width: 100%;
+    height: calc(100% - 35px);
+    border: 0;
+    border-radius: 0;
+    object-fit: contain;
+}
+
+.gw-spectrogram {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+}
+
+.gw-fact {
+    grid-column: 1 / span 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    border-left: 5px solid var(--gold);
+    background: #fff8e8;
+    padding: 8px 14px;
+    color: var(--ink);
+    font-size: 0.44em;
+}
+
+.gw-fact strong,
+.gw-fact span {
+    white-space: nowrap;
+}
+
+.gw-fact span::before {
+    content: '|';
+    margin-right: 10px;
+    color: var(--muted);
+}
+
+.viz-frame svg,
+.viz-frame canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.viz-label {
+    fill: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.viz-small {
+    fill: var(--muted);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.viz-axis {
+    stroke: #8593a0;
+    stroke-width: 1.4;
+}
+
+.viz-blue {
+    stroke: var(--blue);
+}
+
+.viz-cyan {
+    stroke: var(--cyan);
+}
+
+.viz-gold {
+    stroke: var(--gold);
+}
+
+.notice-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 0.35em;
+}
+
+.notice-row span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    border-left: 4px solid var(--cyan);
+    background: #eef7fa;
+    padding: 4px 10px;
+    color: var(--ink);
+    font-size: 0.42em;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.notice-row span:nth-child(2n) {
+    border-left-color: var(--gold);
+}
+
+.pulse-dot {
+    transform-origin: center;
+    animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+.flow-line {
+    stroke-dasharray: 10 9;
+    animation: dash-flow 1.7s linear infinite;
+}
+
+.draw-line {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: draw-line 4.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%,
+    100% {
+        opacity: 0.55;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.18);
+    }
+}
+
+@keyframes dash-flow {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: -38;
+    }
+}
+
+@keyframes draw-line {
+    0% {
+        stroke-dashoffset: 600;
+    }
+
+    38%,
+    78% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: -600;
+    }
 }
 
 .card.gold {
