@@ -77,6 +77,8 @@ End: Even the background estimate becomes its own measurement problem.
 
 ## Parameter estimation: the inverse problem
 
+<p class="math-block">$$ \underbrace{p(\vec\theta \mid d)}_{\text{posterior}} \;=\; \frac{\overbrace{p(d \mid \vec\theta)}^{\text{likelihood}}\;\; \overbrace{p(\vec\theta)}^{\text{prior}}}{\underbrace{p(d)}_{\text{evidence}}} $$</p>
+
 <div class="two-col">
   <div>
     <h3>What we infer</h3>
@@ -97,18 +99,37 @@ End: Even the background estimate becomes its own measurement problem.
 </div>
 
 Notes: Start: Once you trust a candidate is real, the next question is what
-produced it.
+produced it — and at heart it is just Bayes' theorem.
 
+- Read the formula on the slide: posterior = likelihood x prior / evidence.
+- One line to write down; everything hard is inside evaluating and exploring it.
 - Bayesian inverse problem: masses, spins, distance, sky location, inclination,
   tidal effects.
 - Also model comparison and population hyperparameters.
 - Hard because posteriors are high-dimensional and often multimodal.
 - Waveform models are expensive; selection, calibration, and noise uncertainty
   matter.
-- Mention MCMC, nested sampling, reduced-order models, surrogates, and
+- Tools: MCMC, nested sampling, reduced-order/surrogate models, and
   simulation-based inference.
 
-End: Discovery is only the start; inference turns the event into physics.
+End: The equation is one line; exploring it is the hard part — let me show you
+what sampling that posterior actually looks like.
+
+---
+
+<!-- .slide: data-background-iframe="https://mcmc-visualization.vercel.app" data-background-interactive data-background-color="#0a0a0a" -->
+
+Notes: Start: Here is what that sampling actually looks like.
+
+- This is a live MCMC sampler exploring a target distribution.
+- Each step proposes a move; the chain accepts or rejects and slowly traces out
+  the posterior.
+- The histogram of visited states converges to the distribution we want.
+- This is the engine behind masses, spins, distance, and sky location.
+- The page is embedded and interactive: I can perturb it live.
+
+End: That random walk is how we turn a likelihood and a prior into a posterior
+we can actually report.
 
 ---
 
@@ -137,18 +158,18 @@ End: Low-frequency sensitivity turns inference into a live operational problem.
 
 ## AI can help, but cannot replace physics
 
-<div class="two-col">
+<div class="two-col ai-efforts">
   <div>
-    <h3>Where learning is promising</h3>
+    <h3>What the field already does</h3>
     <ul>
-      <li>Glitch classification and data-quality triage.</li>
-      <li>Fast posterior approximations and amortized inference.</li>
-      <li>Surrogate waveform models and simulation acceleration.</li>
-      <li>Control, monitoring, and anomaly detection.</li>
+      <li><strong>Glitch mitigation &amp; noise regression</strong> &mdash; classification and witness-channel subtraction.</li>
+      <li><strong>Amortized inference (SBI)</strong> &mdash; learn the posterior <em>once</em>, then sample any event in seconds.</li>
+      <li><strong>ML-assisted inference (non-amortized)</strong> &mdash; flow-boosted MCMC and surrogates, <em>per event</em>.</li>
+      <li><strong>ML detection &amp; search</strong> &mdash; deep networks as fast triggers beside matched filtering.</li>
     </ul>
   </div>
   <div>
-    <h3>Where rigor is essential</h3>
+    <h3>Where rigor is non-negotiable</h3>
     <ul>
       <li>Calibrated uncertainty, not only point accuracy.</li>
       <li>Out-of-distribution detector states.</li>
@@ -158,16 +179,28 @@ End: Low-frequency sensitivity turns inference into a live operational problem.
   </div>
 </div>
 
-<p class="takeaway">The useful question is not "AI or physics?" but "where can learned models be constrained, validated, and monitored?"</p>
+<p class="ml-refs"><strong>Glitch mitigation:</strong> Zevin <em>et al.</em> (Gravity Spy), CQG <strong>34</strong>, 064003 (2017); Ormiston <em>et al.</em> (DeepClean), Phys. Rev. Research <strong>2</strong>, 033066 (2020). &nbsp; <strong>Amortized SBI:</strong> Dax <em>et al.</em> (DINGO), PRL <strong>127</strong>, 241103 (2021); Dax <em>et al.</em> (DINGO-BNS), Nature <strong>639</strong>, 49 (2025). &nbsp; <strong>ML-assisted:</strong> Wong, Isi &amp; Edwards (Jim), ApJ <strong>958</strong>, 129 (2023); Field <em>et al.</em> (surrogates), PRX <strong>4</strong>, 031006 (2014). &nbsp; <strong>ML search:</strong> George &amp; Huerta, PLB <strong>778</strong>, 64 (2018); Sch&auml;fer <em>et al.</em> (MLGWSC-1), PRD <strong>107</strong>, 023021 (2023).</p>
 
-Notes: Start: I want to be balanced because this question comes up in every talk
-like this.
+<p class="takeaway ai-take">Not "AI or physics?" &mdash; but "where can learned models be constrained, validated, and monitored?"</p>
 
-- Learning can help with glitch classification, data-quality triage, fast
-  posteriors, surrogates, control, and anomaly detection.
-- But public science needs calibrated uncertainty, not only point accuracy.
-- Models must handle out-of-distribution detector states and population shift.
-- Alerts must remain auditable.
+Notes: Start: I want to be balanced, and concrete about what the field already
+does rather than hand-wave about "AI" — four categories.
+
+- Glitch mitigation & noise regression: ML glitch classification (Gravity Spy,
+  Zevin et al.) and witness-channel noise subtraction (DeepClean, Ormiston et al.).
+- Amortized inference (SBI): train a network once to approximate the posterior,
+  then infer any event in seconds — DINGO (Dax et al.); DINGO-BNS does real-time
+  binary-neutron-star inference with pre-merger localization.
+- ML-assisted inference (non-amortized): ML only speeds up per-event classical
+  Bayesian analysis — flow-boosted MCMC (Jim; Wong, Isi & Edwards) and
+  surrogate/reduced-order waveforms (Field et al.); exact likelihood is kept.
+- ML detection & search: deep networks as fast triggers alongside matched
+  filtering (George & Huerta; Gabbard et al.), benchmarked in MLGWSC-1.
+- Stress the trade-off: amortized buys speed but inherits its training
+  distribution; non-amortized keeps the exact physics but runs per event.
+- Where rigor is non-negotiable: calibrated uncertainty (not point accuracy),
+  out-of-distribution detector states, bias under population shift, auditable
+  public alerts.
 
 End: The useful question is not AI or physics, but where learned models can be
 constrained, validated, and monitored.

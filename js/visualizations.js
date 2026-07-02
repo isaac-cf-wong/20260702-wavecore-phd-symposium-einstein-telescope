@@ -2407,6 +2407,7 @@
                 ctx.setLineDash([])
                 ctx.fillStyle = '#5a6875'
                 ctx.font = '700 12px Arial'
+                ctx.textAlign = 'left'
                 ctx.fillText(`threshold ρ = ${data.thr}`, L + 4, thrY - 6)
                 ctx.fillText('matched-filter SNR  ρ(t)', L, rTop - 6)
 

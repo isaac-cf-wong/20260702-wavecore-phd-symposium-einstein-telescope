@@ -329,6 +329,31 @@ body {
     white-space: nowrap;
 }
 
+/* Dense, categorized citation footnote (beats the .reveal p 0.63em rule). */
+.reveal p.ml-refs {
+    margin: 0.55em 0 0;
+    color: var(--muted);
+    font-size: 0.3em;
+    line-height: 1.32;
+}
+
+.reveal p.ml-refs strong {
+    color: var(--blue);
+}
+
+/* Compact two-column list + takeaway, scoped to the AI-efforts slide so the
+   four cited categories, the rigor list, refs, and takeaway all fit at 720px. */
+.reveal .ai-efforts li {
+    font-size: 0.55em;
+    line-height: 1.24;
+    margin-bottom: 0.22em;
+}
+
+.reveal p.takeaway.ai-take {
+    margin-top: 0.45em;
+    font-size: 0.6em;
+}
+
 /* ===== Layout grids ===== */
 
 .two-col,
