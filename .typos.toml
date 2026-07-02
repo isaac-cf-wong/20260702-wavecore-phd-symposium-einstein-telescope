@@ -18,3 +18,7 @@ extend-ignore-re = [
   # next line with potential false positive
   "(<!--|#|//)\\s*typos:ignore-next-line\\s*.*?(-->)?\\n.*",
 ]
+
+[default.extend-words]
+# STADIUS: KU Leuven division (Dynamical Systems, Signal Processing, Data Analytics)
+stadius = "stadius"

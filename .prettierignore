@@ -1,0 +1,8 @@
+# Auto-generated data modules (baked by scripts/*.py|js)
+js/europe-geo.js
+js/*-data.js
+# Vendored third-party libraries
+js/vendor/
+# Bulk source data
+scripts/matched_filter_search.json
+scripts/sensitivity_curves/

@@ -10,16 +10,24 @@
   <span>Inference</span>
 </div>
 
-Notes: Animation candidate: raw strain -> spectrogram -> template match ->
-candidate -> posterior.
+Notes: Start: How do we go from a raw strain time series to a scientific
+discovery?
+
+- Conditioning cleans and prepares the strain data.
+- Search compares data against expected waveform structure.
+- Significance asks whether a candidate rises above noise background.
+- Inference estimates physical parameters for surviving candidates.
+
+End: Strain, conditioning, search, significance, inference is the skeleton for
+the next part.
 
 ---
 
 ## Matched filtering: correlation at scale
 
-<p class="large-claim">Matched filtering slides a predicted waveform through the data and asks: where does the correlation peak?</p>
+<p class="large-claim">Slide a predicted waveform through the data &mdash; where does the correlation peak?</p>
 
-<div class="viz-frame" data-viz="matched-filter"></div>
+<div class="viz-frame mf" data-viz="matched-filter"></div>
 
 <div class="notice-row">
   <span>Template bank</span>
@@ -28,16 +36,24 @@ candidate -> posterior.
   <span>Coincidence across detectors</span>
 </div>
 
-Notes: This can later reuse the JavaScript style from the earlier deck: template
-sliding over strain, SNR time series, triggers, coincidence.
+Notes: Start: The workhorse of the search stage is matched filtering.
+
+- Slide a predicted waveform through the data.
+- Compute a noise-weighted correlation and look for peaks.
+- Template banks cover plausible source parameters.
+- Triggers need thresholds and coincidence across detectors.
+- Emphasize scale: template count, data volume, and efficiency.
+
+End: It is correlation detection, but at a scale that pushes hard against what
+is tractable.
 
 ---
 
 ## False alarms are empirical
 
-<p class="large-claim">A candidate matters only relative to how often noise alone would fake it. At ET rates, even the background estimate becomes a measurement problem.</p>
+<p class="large-claim">A candidate matters only relative to how often noise alone would fake it &mdash; so the background is measured, by time-sliding the detectors.</p>
 
-<div class="viz-frame" data-viz="false-alarm"></div>
+<div class="viz-frame ts" data-viz="time-slide"></div>
 
 <div class="notice-row">
   <span>Real coincidences</span>
@@ -46,7 +62,16 @@ sliding over strain, SNR time series, triggers, coincidence.
   <span>False-alarm rate</span>
 </div>
 
-Notes: This is the natural place to connect to my own work, but still broad.
+Notes: Start: A candidate matters only relative to how often noise alone would
+fake it.
+
+- Detection statistic alone is not enough.
+- Use empirical backgrounds, often from time shifts between detectors.
+- Compare real coincidences against accidental coincidences.
+- Report false-alarm rate.
+- At ET rates, signal-free background estimation becomes difficult.
+
+End: Even the background estimate becomes its own measurement problem.
 
 ---
 
@@ -71,8 +96,19 @@ Notes: This is the natural place to connect to my own work, but still broad.
   </div>
 </div>
 
-Notes: Mention Bayesian inference, MCMC/nested sampling, reduced-order methods,
-surrogates, and simulation-based inference verbally.
+Notes: Start: Once you trust a candidate is real, the next question is what
+produced it.
+
+- Bayesian inverse problem: masses, spins, distance, sky location, inclination,
+  tidal effects.
+- Also model comparison and population hyperparameters.
+- Hard because posteriors are high-dimensional and often multimodal.
+- Waveform models are expensive; selection, calibration, and noise uncertainty
+  matter.
+- Mention MCMC, nested sampling, reduced-order models, surrogates, and
+  simulation-based inference.
+
+End: Discovery is only the start; inference turns the event into physics.
 
 ---
 
@@ -87,8 +123,15 @@ surrogates, and simulation-based inference verbally.
   <span>Telescope follow-up</span>
 </div>
 
-Notes: Animation candidate: inspiral early warning clock, probability sky map
-shrinking as the signal accumulates.
+Notes: Start: None of this is only an offline problem anymore.
+
+- Long inspirals may be detected before merger.
+- Sky maps can shrink as more signal accumulates.
+- Multi-messenger astronomy needs streaming detection, localization, and alerts.
+- Telescope follow-up runs under a real-time latency budget.
+- ET's low-frequency reach can stretch warning times substantially.
+
+End: Low-frequency sensitivity turns inference into a live operational problem.
 
 ---
 
@@ -117,8 +160,17 @@ shrinking as the signal accumulates.
 
 <p class="takeaway">The useful question is not "AI or physics?" but "where can learned models be constrained, validated, and monitored?"</p>
 
-Notes: This should resonate with data-analysis and ML people while staying
-scientifically conservative.
+Notes: Start: I want to be balanced because this question comes up in every talk
+like this.
+
+- Learning can help with glitch classification, data-quality triage, fast
+  posteriors, surrogates, control, and anomaly detection.
+- But public science needs calibrated uncertainty, not only point accuracy.
+- Models must handle out-of-distribution detector states and population shift.
+- Alerts must remain auditable.
+
+End: The useful question is not AI or physics, but where learned models can be
+constrained, validated, and monitored.
 
 ---
 
@@ -139,5 +191,14 @@ scientifically conservative.
   </div>
 </div>
 
-Notes: This is a good place to mention JAX/GPU work if desired, but keep it
-high-level in the first-pass structure.
+Notes: Start: There is an observatory behind the observatory: computing.
+
+- Streaming pipelines must keep up continuously with detector output and data
+  quality changes.
+- Offline searches, parameter estimation, and population studies need large CPU
+  and GPU resources.
+- Mention accelerator, differentiable, or JAX/GPU work only if useful.
+- Reproducibility needs provenance, versioned models, validated workflows, and
+  archiving.
+
+End: This infrastructure is not auxiliary; the science cannot exist without it.

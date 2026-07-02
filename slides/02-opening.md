@@ -2,8 +2,18 @@
 
 <div class="viz-frame hero-viz" data-viz="gw-stretch"></div>
 
-Notes: Start conceptually. Avoid field equations. The key mental model is
-"distance changes" rather than "something shakes the detector."
+Notes: Start: Let's start with the simplest possible mental model: forget field
+equations for now.
+
+- A gravitational wave stretches one direction and compresses the perpendicular
+  direction, then reverses.
+- The effect is tiny, far smaller than a proton-scale length change.
+- Key reframing: not "something shakes the detector," but "distance itself
+  changes."
+- That means the instrument is a ruler, not a seismometer.
+
+End: Once distance is the quantity changing, the next question is where such
+waves come from.
 
 ---
 
@@ -25,9 +35,16 @@ Notes: Start conceptually. Avoid field equations. The key mental model is
   <span>Ringdown</span>
 </div>
 
-Notes: Play enough of the simulation to establish the basic source picture: two
-compact objects orbit, radiate gravitational waves, merge, and settle. Narrate
-conceptually; do not introduce waveform modelling yet.
+Notes: Start: So where do waves like this come from?
+
+- Play enough video to show two compact objects orbiting.
+- Name the stages: compact binary, inspiral, merger, ringdown.
+- Explain that energy leaves as gravitational waves, so the orbit speeds up and
+  frequency rises.
+- Keep this as the source picture; do not introduce waveform modelling yet.
+
+End: That four-stage picture is the source model behind almost everything else
+in this talk.
 
 ---
 
@@ -49,9 +66,17 @@ conceptually; do not introduce waveform modelling yet.
   <span>Interference</span>
 </div>
 
-Notes: Use the video to establish the basic interferometer idea: split light
-between two arms, let mirror motion change the optical phase, then read out the
-interference. Keep this conceptual.
+Notes: Start: Now, how do you actually measure a length change that small?
+
+- Interferometer idea: split a laser, send it down two perpendicular arms,
+  bounce from mirrors, recombine.
+- A gravitational wave changes the two arm lengths differently.
+- The changed arm lengths shift the optical phase and therefore the interference
+  pattern.
+- Keep the precision scale: about one part in 10^21.
+
+End: The idea is simple; the whole difficulty is making it work at that
+precision.
 
 ---
 
@@ -74,15 +99,22 @@ interference. Keep this conceptual.
     <strong>14 September 2015</strong>
     <span>two LIGO detectors</span>
     <span>binary black-hole merger</span>
+    <span>2017 Nobel Prize in Physics</span>
   </div>
 </div>
 
-<p class="source-line">Public data products: GWOSC / LIGO Open Science Center.</p>
+<p class="source-line">Data: <a href="https://gwosc.org/events/GW150914/" target="_blank" rel="noopener noreferrer">GWOSC / LIGO Open Science Center</a>, GW150914 data release. B. P. Abbott <em>et al.</em>, &ldquo;Observation of Gravitational Waves from a Binary Black Hole Merger,&rdquo; <a href="https://doi.org/10.1103/PhysRevLett.116.061102" target="_blank" rel="noopener noreferrer">Phys. Rev. Lett. 116, 061102 (2016)</a>.</p>
 
-Notes: Use the first detection as the concrete bridge from instrument to data:
-two detectors saw the same short chirp, and the time-frequency view makes the
-rising frequency visible. This is the real-data anchor before abstract signal
-processing language.
+Notes: Start: This is not a simulation; this is real data.
+
+- Date: 14 September 2015.
+- Hanford and Livingston saw the same short chirp within milliseconds.
+- Point to the time-frequency panel: the rising track is the chirp.
+- This was the first direct detection, from a binary black-hole merger.
+- Mention the 2017 Nobel Prize briefly.
+
+End: This event is the real-data anchor before we talk about signal processing
+in the abstract.
 
 ---
 
@@ -109,8 +141,17 @@ processing language.
 
 <p class="takeaway">The same concepts behind wireless systems, waves, sensing, synchronization, filtering, detection, and inference reappear in ET under extreme physical constraints.</p>
 
-Notes: This is a contract with the audience: broad overview first, then
-technical opportunities.
+Notes: Start: Let me be explicit about the contract for the rest of the hour.
+
+- ET is a proposed European third-generation gravitational-wave observatory.
+- It aims to see deeper, lower in frequency, and much earlier before merger.
+- Today has three lenses: what GWs are, what ET changes, and why the open
+  problems look familiar to WaveCoRE.
+- Connect to waves, sensing, synchronization, filtering, detection, and
+  inference.
+
+End: The same signal-processing concepts reappear here under much more extreme
+physical constraints.
 
 ---
 
@@ -123,31 +164,32 @@ technical opportunities.
 5. Open challenges and research opportunities
 6. Discussion
 
-Notes: Target timing: GW concept intro 8 min, ET overview 8 min, sensing/waves
-10 min, data analysis 12 min, open challenges 9 min, close 3 min.
+Notes: Start: Here's the plan for the talk.
+
+- GW concept intro: about 8 minutes.
+- ET project overview: about 8 minutes.
+- Sensing, noise, calibration, and environmental coupling: about 10 minutes.
+- Data analysis: about 12 minutes.
+- Open challenges and research opportunities: about 9 minutes.
+- Close and discussion: about 3 minutes plus Q&A.
+
+End: With that roadmap in mind, let me show why ET is a qualitative transition.
 
 ---
 
 ## What changes from current detectors to ET?
 
-<div class="two-col">
-  <div>
-    <h3>Current generation</h3>
-    <ul>
-      <li>First direct detections established the field.</li>
-      <li>Signals are rare enough that many analyses are event-centred.</li>
-      <li>Detection, characterization, and follow-up are already sophisticated.</li>
-    </ul>
-  </div>
-  <div>
-    <h3>Third generation</h3>
-    <ul>
-      <li>Signals become more frequent, longer, and often overlapping.</li>
-      <li>Low-frequency sensitivity moves minutes, hours, or days of early warning into reach.</li>
-      <li>Backgrounds, calibration, computing, and real-time inference become central design problems.</li>
-    </ul>
-  </div>
-</div>
+<div class="viz-frame hero-viz compact-hero" data-viz="detector-generations"></div>
 
-Notes: This slide motivates why ET is a qualitative data-analysis transition,
-not only a bigger detector.
+<p class="takeaway">A qualitative transition, not just a bigger detector: signals become <strong>longer, more frequent, and overlapping</strong> &mdash; so backgrounds, calibration, computing, and real-time inference become central design problems.</p>
+
+Notes: Start: Before going further, let's be precise about what actually changes
+in the third generation.
+
+- Same 1.4+1.4 solar-mass binary neutron-star inspiral in both bands.
+- Current detectors enter around 20 Hz: roughly 2.5 minutes before merger.
+- ET reaches a few Hz: roughly 7 hours before merger, about 150 times longer.
+- Longer signals enable early warning, but also more overlap, background,
+  calibration, computing, and real-time inference problems.
+
+End: This is why ET is a qualitative transition, not simply a bigger detector.

@@ -68,6 +68,7 @@ exports/
 # Local development
 .local/
 dev-notes.md
+manuscript.md
 
 # Reveal.js specific
 # (Uncomment if using reveal.js as a submodule)
@@ -84,3 +85,7 @@ custom-config.js
 
 # Lighthourse reports
 .lighthouseci/
+
+# Python
+__pycache__/
+*.pyc

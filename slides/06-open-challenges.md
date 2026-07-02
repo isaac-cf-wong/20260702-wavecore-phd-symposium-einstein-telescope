@@ -20,7 +20,17 @@
   </div>
 </div>
 
-Notes: This is probably the strongest direct WaveCoRE bridge.
+Notes: Start: Let's turn to open challenges, starting with the strongest direct
+bridge to WaveCoRE.
+
+- ET must characterize seismic, acoustic, magnetic, and atmospheric coupling.
+- It must predict site-specific environmental noise.
+- It must subtract or veto without throwing away real astrophysical signals.
+- Map this to array processing, spatial statistics, adaptive filtering, and
+  sensor-network design.
+
+End: This is environmental sensing at a precision most sensor networks never
+have to reach.
 
 ---
 
@@ -45,8 +55,16 @@ Notes: This is probably the strongest direct WaveCoRE bridge.
   </div>
 </div>
 
-Notes: This connects waves, EM environment, magnetometer networks, and
-statistical signal processing.
+Notes: Start: Network searches rely heavily on coherence across detectors.
+
+- Real signals should appear consistently across sites.
+- Shared environmental or infrastructure noise can mimic weak correlations.
+- Stochastic-background searches are especially vulnerable.
+- Research questions: identify weak long-baseline correlations, separate
+  astrophysical from terrestrial structure, propagate uncertainty honestly.
+
+End: This connects waves, electromagnetic environment, magnetometer networks,
+and statistical signal processing.
 
 ---
 
@@ -61,7 +79,16 @@ statistical signal processing.
   <span>Joint inference</span>
 </div>
 
-Notes: Use analogy to crowded radio sky carefully; it is helpful but not exact.
+Notes: Start: At third-generation rates, sources begin to overlap in time and
+frequency.
+
+- Many simultaneous sources can occupy the same data.
+- Time-frequency tracks overlap and create a structured foreground.
+- One-at-a-time analysis becomes less adequate.
+- Joint inference across events becomes important.
+- Use the crowded-radio-sky analogy carefully; it is helpful but not exact.
+
+End: The background is no longer cleanly empty between events.
 
 ---
 
@@ -87,8 +114,18 @@ Notes: Use analogy to crowded radio sky carefully; it is helpful but not exact.
   </div>
 </div>
 
-Notes: This is where accelerators, differentiable programming, compression, and
-neural surrogates fit.
+Notes: Start: Longer signals, larger template spaces, and more detections all
+push toward acceleration.
+
+- Need faster pipelines, cheaper inference, rapid alerts, and repeated
+  re-analyses.
+- Acceleration must preserve detection efficiency.
+- It must preserve false-alarm and posterior calibration.
+- It must remain traceable to physical models.
+- Mention accelerators, differentiable programming, compression, and neural
+  surrogates.
+
+End: Speed is useful only if the scientific guarantees survive.
 
 ---
 
@@ -113,7 +150,16 @@ neural surrogates fit.
   </div>
 </div>
 
-Notes: This is a forward-looking slide. No need to overstate current readiness.
+Notes: Start: The instrument is active, not passive.
+
+- Feedback control keeps the interferometer near its sensitive state.
+- Control choices shape noise spectra and transient artifacts.
+- Diagnostics and astrophysical inference share the same data stream.
+- Opportunity: closed-loop monitoring, state-aware conditioning, joint detector
+  and signal models.
+- Keep this forward-looking; do not overstate current readiness.
+
+End: Control and inference should not be treated as unrelated pipelines forever.
 
 ---
 
@@ -142,4 +188,15 @@ Notes: This is a forward-looking slide. No need to overstate current readiness.
 
 <p class="takeaway">ET's credibility will depend as much on calibrated uncertainty as on raw sensitivity.</p>
 
-Notes: This lands the epistemic theme.
+Notes: Start: I want to close the challenge section on the deepest issue:
+uncertainty.
+
+- Inside the collaboration: data quality, calibration envelopes, pipeline
+  review, reproducible alerts and publications.
+- Outside the collaboration: public alerts, fundamental-physics claims,
+  population statements, outside scrutiny.
+- Raw sensitivity alone is not enough.
+- Overconfident claims would damage the science.
+
+End: ET's credibility will depend as much on calibrated uncertainty as on raw
+sensitivity.
