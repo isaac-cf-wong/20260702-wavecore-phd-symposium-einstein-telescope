@@ -1022,7 +1022,7 @@
                 let anchor = 'middle'
                 let tx = x
                 let ty = y
-                let bx = x - tw / 2
+                let bx
                 if (s.place === 'left') {
                     anchor = 'end'
                     tx = x - gap
