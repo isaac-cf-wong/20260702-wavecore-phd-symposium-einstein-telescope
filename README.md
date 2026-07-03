@@ -7,6 +7,20 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 [![typos](https://img.shields.io/badge/spell--check-typos-brightgreen)](https://github.com/crate-ci/typos)
 
+## Event
+
+**WaveCoRE PhD Symposium** Biennial symposium of the four WaveCoRE research
+groups (WaveCoRE Arenberg, the EMC group at Bruges, Dramco, and the Light &
+Lighting Laboratory).
+
+- **Date:** 2 July 2026, 09:00–18:00 CEST
+- **Location:** KU Leuven Campus Bruges, Spoorwegstraat 12, 8200 Sint-Michiels,
+  Belgium
+- **Contact:** Jasper Vierstraete
+- **Attendees:** Members of WaveCoRE
+- **Format:** Research group presentations, keynote lecture, and PhD student
+  poster sessions
+
 ## Abstract
 
 The direct detection of gravitational waves has opened a new observational
