@@ -20,6 +20,7 @@ Lighting Laboratory).
 - **Attendees:** Members of WaveCoRE
 - **Format:** Research group presentations, keynote lecture, and PhD student
   poster sessions
+- **Event page:** <https://set.kuleuven.be/phd/seminars/wavecore-phd-symposium>
 
 ## Abstract
 
