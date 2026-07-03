@@ -1021,7 +1021,7 @@
                 const gap = 14
                 let anchor = 'middle'
                 let tx = x
-                let ty = y
+                let ty
                 let bx
                 if (s.place === 'left') {
                     anchor = 'end'
